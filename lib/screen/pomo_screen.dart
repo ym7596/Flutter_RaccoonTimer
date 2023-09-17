@@ -77,12 +77,14 @@ class PomoScreen extends StatelessWidget {
                         color: Theme.of(context).cardColor,
                         iconSize: 50,
                       ),
-                      Text(GetXController.to.isRestTime == true ? "휴식!" : "너구리시간"
-                      ,style:
-                        TextStyle(
-                          fontSize: 30,
-                          color: GetXController.to.isRestTime == true ? Colors.green : Colors.white
-                        ),)
+                      Obx(() =>
+                         Text(GetXController.to.isRestTime.value == true ? "휴식!" : "너구리시간"
+                        ,style:
+                          TextStyle(
+                            fontSize: 30,
+                            color: GetXController.to.isRestTime.value == true ? Colors.green : Colors.white
+                          ),),
+                      )
                     ],
                   ),
                 )),

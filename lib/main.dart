@@ -7,7 +7,8 @@ import 'Router.dart';
 void main() {
   runApp(const MyApp());
 }
-
+//admob id : ca-app-pub-5889873360425830~3115211013
+//admob sdk 통합 : ca-app-pub-5889873360425830/7627217389
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 

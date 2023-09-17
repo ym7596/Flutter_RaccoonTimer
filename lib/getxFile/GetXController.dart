@@ -18,7 +18,7 @@ class GetXController extends GetxController{
 
   RxBool isRunning = false.obs;
 
-  bool isRestTime = false;
+  RxBool isRestTime = false.obs;
 
 
   @override
@@ -76,7 +76,7 @@ class GetXController extends GetxController{
 
   void resetTimer(){
     timer?.cancel();
-    isRestTime = false;
+    isRestTime.value = false;
     isRunning.value = false;
     currentTime.value = pomoTime;
   }
@@ -86,12 +86,13 @@ class GetXController extends GetxController{
     timer = Timer.periodic(duration, (Timer timer) {
       if(currentTime.value == 0){
         onVibration();
-        if(isRestTime == false){
+        if(isRestTime.value == false){
           raccoonNum += 1;
         }
         isRunning.value = false;
-        currentTime.value = isRestTime == true ? pomoTime : restTime;
-        isRestTime = !isRestTime;
+        currentTime.value = isRestTime.value == true ? pomoTime : restTime;
+        isRestTime.value = !isRestTime.value;
+        print(isRestTime);
         timer.cancel();
       }
       else{
