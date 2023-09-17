@@ -7,11 +7,6 @@ class PomoScreen extends StatelessWidget {
   PomoScreen({super.key});
 
 
-  String format(int seconds) {
-    var duration = Duration(seconds: seconds);
-    String result = duration.toString().split('.').first.substring(2);
-    return result;
-  }
 
   void onStartPressed(){
     GetXController.to.startTimer();
@@ -24,6 +19,7 @@ class PomoScreen extends StatelessWidget {
   void onResetPressed(){
     GetXController.to.resetTimer();
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +44,7 @@ class PomoScreen extends StatelessWidget {
                   alignment: Alignment.bottomCenter,
                   child: Obx(() {
                    return Text(
-                      format(GetXController.to.currentTime.value),
+                     GetXController.to.format(),
                       style:const TextStyle(
                           color: Color(0xFFF4EDDB),
                           fontSize: 89,
@@ -80,7 +76,13 @@ class PomoScreen extends StatelessWidget {
                         icon: Icon(Icons.refresh_outlined),
                         color: Theme.of(context).cardColor,
                         iconSize: 50,
-                      )
+                      ),
+                      Text(GetXController.to.isRestTime == true ? "휴식!" : "너구리시간"
+                      ,style:
+                        TextStyle(
+                          fontSize: 30,
+                          color: GetXController.to.isRestTime == true ? Colors.green : Colors.white
+                        ),)
                     ],
                   ),
                 )),
