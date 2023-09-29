@@ -109,7 +109,7 @@ class _SettingScreenState extends State<SettingScreen> {
 
                         GetXController.to.settingTimer(minuteToPomo);
                         GetXController.to.restTime = refreshtime * 60;
-
+                        GetXController.to.resetTimer();
                       });
 
                     },
