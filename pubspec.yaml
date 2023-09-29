@@ -38,6 +38,7 @@ dependencies:
   get: ^4.6.5
   vibration: ^1.8.1
   numberpicker: ^2.1.2
+  google_mobile_ads: ^3.0.0
 
 dev_dependencies:
   flutter_test:
