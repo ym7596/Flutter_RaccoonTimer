@@ -2,15 +2,15 @@ import 'dart:io';
 
 class AdHelper {
 
-  // static String get bannerAdUnitId {
-  //   if (Platform.isAndroid) {
-  //     return '<YOUR_ANDROID_BANNER_AD_UNIT_ID>';
-  //   } else if (Platform.isIOS) {
-  //     return '<YOUR_IOS_BANNER_AD_UNIT_ID>';
-  //   } else {
-  //     throw UnsupportedError('Unsupported platform');
-  //   }
-  // }
+  static String get bannerAdUnitId {
+    if (Platform.isAndroid) {
+      return 'ca-app-pub-5889873360425830/2255820257';
+    } else if (Platform.isIOS) {
+      return 'ca-app-pub-5889873360425830/7825427858';
+    } else {
+      throw UnsupportedError('Unsupported platform');
+    }
+  }
 
   // static String get interstitialAdUnitId {
   //   if (Platform.isAndroid) {
@@ -23,7 +23,7 @@ class AdHelper {
   // }
 
 //Test Ad Mob
-  static String get bannerAdUnitId {
+  static String get bannerAdUnitIdTest {
     if (Platform.isAndroid) {
       return 'ca-app-pub-3940256099942544/6300978111';
     } else if (Platform.isIOS) {
