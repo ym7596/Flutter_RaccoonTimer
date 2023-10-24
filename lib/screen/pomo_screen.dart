@@ -40,22 +40,30 @@ class PomoScreen extends StatelessWidget {
       backgroundColor: Theme.of(context).primaryColor,
       body: SafeArea(
         child: Center(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              AdShow(adControl),
-              //AdCall(),
-              MainTimer,
-              PlayPauseBtn(context),
-              const SizedBox(
-                height: 30,
-              ),
-              ResetBtn(context),
-              StateText()
-             ,
-              BottomRaccoonInfo(context)
-            ],
+          child: Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('asset/img/bg_raccooonnn.png'),
+                fit: BoxFit.cover
+              )
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                AdShow(adControl),
+                //AdCall(),
+                MainTimer,
+                PlayPauseBtn(context),
+                const SizedBox(
+                  height: 30,
+                ),
+                ResetBtn(context),
+                StateText()
+               ,
+                BottomRaccoonInfo(context)
+              ],
+            ),
           ),
         ),
       ),
@@ -63,13 +71,27 @@ class PomoScreen extends StatelessWidget {
   }
 
 
-  Widget MainTimer = Obx(() => Text(
+  Widget MainTimer = Obx(() => Stack(
+    children: <Widget>[
+      Text(
+      GetXController.to.format(),
+        style: TextStyle(
+          fontSize: 80,
+          foreground: Paint()
+            ..style = PaintingStyle.stroke
+            ..strokeWidth = 6
+            ..color = Colors.black!,
+        ),
+    ),
+      Text(
         GetXController.to.format(),
-        style: const TextStyle(
-            color: Color(0xFFF4EDDB),
-            fontSize: 89,
-            fontWeight: FontWeight.w600),
-      ));
+        style: TextStyle(
+          fontSize: 80,
+          color: Colors.white,
+        ),
+      ),
+    ]
+  ));
 
   Widget PlayPauseBtn(BuildContext context) {
     return Obx(() => IconButton(
