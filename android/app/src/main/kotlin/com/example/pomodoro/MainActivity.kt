@@ -1,4 +1,4 @@
-package com.example.pomodoro
+package com.fatraccoon.raccoontimer
 
 import io.flutter.embedding.android.FlutterActivity
 
